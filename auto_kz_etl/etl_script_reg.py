@@ -8,7 +8,7 @@ import pandas as pd
 import numpy as np
 import logging
 from sqlalchemy.orm import sessionmaker, declarative_base
-from sqlalchemy import create_engine, select, Column, Integer, String, Float, DateTime
+from sqlalchemy import create_engine, select, Column, Integer, String, Float, DateTime, Numeric
 from sqlalchemy.sql import text
 from tqdm import tqdm
 import sys
@@ -1069,7 +1069,7 @@ class CarData(Base):
     release_year = Column(Integer)
     country_origin = Column(String)
     fuel_type = Column(String)
-    engine_capacity_l = Column(Float)
+    engine_capacity_l = Column(Numeric(5, 2))
     transmission = Column(String)
     drive_type = Column(String)
     region = Column(String)
